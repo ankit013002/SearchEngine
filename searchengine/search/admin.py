@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Document
+
+
+@admin.register(Document)
+class DocumentAdmin(admin.ModelAdmin):
+    list_display = ("title", "url", "last_indexed_at")
+    search_fields = ("title", "content", "url")
+    ordering = ("-last_indexed_at",)
