@@ -16,6 +16,9 @@ python searchengine/manage.py runserver
 
 `GET /search/?q=<query>&limit=<n>`
 
+- `q` (required): text to search in title/content.
+- `limit` (optional): positive integer, default `10`, max `50`.
+
 Example:
 
 ```bash
@@ -23,3 +26,4 @@ curl "http://127.0.0.1:8000/search/?q=search&limit=5"
 ```
 
 Response includes ranked results with title, url, snippet, and score.
+If `limit` is invalid (non-numeric or <= 0), the API returns HTTP `400`.
