@@ -9,9 +9,6 @@ __pycache__/
 # Ignore database files (if using SQLite)
 db.sqlite3
 
-# Ignore Django secret key and settings
-searchengine/searchengine/settings.py
-
 # Ignore logs and temporary files
 *.log
 *.swp
